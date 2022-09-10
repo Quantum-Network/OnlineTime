@@ -215,7 +215,7 @@ public class OnlineTime extends JavaPlugin implements Listener {
 
 
     private void checkForReward( Player player ) {
-        long t = (long) ( player.getStatistic( Statistic.PLAY_ONE_TICK ) * 0.05 * 1000 );
+        long t = (long) ( player.getStatistic( Statistic.PLAY_ONE_MINUTE ) * 0.05 * 1000 );
 
         List<String> playerRewards = rewardMap.get( player.getUniqueId() );
         int oldSize = playerRewards.size();//can't have a flag because it needs to be final
@@ -231,7 +231,7 @@ public class OnlineTime extends JavaPlugin implements Listener {
     }
 
     private void printOnlineTime( Player player, CommandSender sender ) {
-        long t = (long) ( player.getStatistic( Statistic.PLAY_ONE_TICK ) * 0.05 * 1000 );
+        long t = (long) ( player.getStatistic( Statistic.PLAY_ONE_MINUTE ) );
         long[] time = formatDuration( t );
         String message = formatMessage( getConfig().getString( "message", "The player %p% has played on the server for %d% days %h% hours %m% mintues and %s% seconds." ), time, player );
         sender.sendMessage( message );

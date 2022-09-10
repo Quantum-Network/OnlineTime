@@ -8,6 +8,15 @@
     <artifactId>OnlineTime</artifactId>
     <version>1.2-SNAPSHOT</version>
 
+    <repositories>
+        <!-- This adds the Spigot Maven repository to the build -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+
     <build>
         <defaultGoal>clean package install</defaultGoal>
         <finalName>${project.name}</finalName>
@@ -43,7 +52,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.9.4-R0.1-SNAPSHOT</version>
+            <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!-- TEST -->
